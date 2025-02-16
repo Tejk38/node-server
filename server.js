@@ -1,15 +1,15 @@
-const express = require('express');
-const puppeteer = require('puppeteer-extra');
+const express = require('express'); // Require modules first
 const cors = require('cors');
-app.use(cors({ origin: '*' }));
+const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 
 puppeteer.use(StealthPlugin());
 
-const app = express();
-const port = 3000;
+const app = express(); // Initialize the Express app after requiring modules
+const port = process.env.PORT || 3000; // Use environment variable or default port
 
 app.use(cors());
+
 app.use(express.json()); // Allow JSON requests
 
 const stores = [
