@@ -38,7 +38,7 @@ const stores = [
 
 const scrapeFirstProductFromStore = async (store, searchTerm) => {
     const browser = await puppeteer.launch({
-        executablePath: '"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"', // Corrected Brave path
+        executablePath: 'C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe', // Corrected Brave path
         headless: true
     });
 
