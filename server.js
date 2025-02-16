@@ -1,8 +1,7 @@
 const express = require('express');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer-extra'); // Use puppeteer-extra to support stealth plugin
 const path = require('path');
 const cors = require('cors');
-// app.use(cors({ origin: '*' }));
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 
 puppeteer.use(StealthPlugin());
@@ -39,11 +38,11 @@ const stores = [
 
 const scrapeFirstProductFromStore = async (store, searchTerm) => {
     const browser = await puppeteer.launch({
-        executablePath: 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe',
+        executablePath: 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe', // Corrected Brave path
         headless: true
-      });
-    const page = await browser.newPage();
+    });
 
+    const page = await browser.newPage();
     await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36");
 
     const url = store.url(searchTerm);
