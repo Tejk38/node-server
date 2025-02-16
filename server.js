@@ -38,11 +38,8 @@ const stores = [
 
 const scrapeFirstProductFromStore = async (store, searchTerm) => {
     const browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--no-sandbox', 
-            '--disable-setuid-sandbox'
-        ]
+        headless: 'new',
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
       
 
