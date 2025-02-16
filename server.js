@@ -39,6 +39,7 @@ const stores = [
 const scrapeFirstProductFromStore = async (store, searchTerm) => {
     const browser = await puppeteer.launch({
         headless: 'new',
+        executablePath: '/usr/bin/chromium-browser',  // Specify the path for Chromium
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
       
