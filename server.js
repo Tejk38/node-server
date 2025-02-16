@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer-core'); 
+const puppeteer = require('puppeteer-extra'); 
 const path = require('path');
 const cors = require('cors');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
